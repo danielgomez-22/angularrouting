@@ -1,1 +1,16 @@
 <p>numero-doble-component works!</p>
+
+<button (click)="goToHome()">Go to Home</button>
+<button (click)="redirect(99)">Go to Doble 99</button>
+<button (click)="redirect(62)">Go to Doble 62</button>
+<button (click)="redirect(84)">Go to Doble 84   </button>
+
+@for (item of [].constructor(3); track $index){
+    <a [routerLink] = "['/doble', $index + 5]"> Doble {{$index + 5}}</a>
+}
+
+@if (numero){
+    <h2 syle="color: blue;">El doble del numero {{numero}} es {{doble}}</h2>
+}@else{
+    <h2 syle="color: red;">No se ha proporcionado un número</h2>
+}

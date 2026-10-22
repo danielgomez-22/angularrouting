@@ -1,0 +1,10 @@
+<p>menu-tabla-multiplicar works!</p>
+<ul> 
+    <li>Tabla de multiplicar</li>
+    @for (item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
+        <li>
+            <!-- Pasamos el número de la tabla como parámetro en la ruta -->
+            <a [routerLink]="['/tabla', item]">Tabla del {{ item }}</a>
+        </li>
+    }
+</ul>
