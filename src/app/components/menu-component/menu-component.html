@@ -4,7 +4,6 @@
     <li><a [routerLink]="['/musica']">Musica</a></li>
     <li><a [routerLink]="['/doble']">Doble</a></li>
     <li><a [routerLink] = "['/doble/7']">Doble 7</a></li>
-    @for (item of [].constructor(3); track $index){
-    <a [routerLink] = "['/doble', $index + 5]"> Doble {{$index + 5}}</a>
-    }
+    <li><a [routerLink] = "['/tabla/5']">Tabla 5</a></li>
+    <li><a [RouterLink] = "['/tabla/1/2/3/4/5']">Tabla 1-5</a></li>
 </ul>

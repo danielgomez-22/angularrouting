@@ -1,10 +1,32 @@
-<p>menu-tabla-multiplicar works!</p>
-<ul> 
-    <li>Tabla de multiplicar</li>
-    @for (item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
-        <li>
-            <!-- Pasamos el número de la tabla como parámetro en la ruta -->
-            <a [routerLink]="['/tabla', item]">Tabla del {{ item }}</a>
-        </li>
-    }
-</ul>
+<div class="container">
+  <h2>Tablas de Multiplicar (Aleatorias)</h2>
+
+  <!-- Botón por si deseas generar nuevas tablas desde aquí -->
+  <button (click)="generarTablasAleatorias()">Generar Nuevas Tablas Aleatorias</button>
+
+  <hr>
+
+  <!-- Sección que se muestra cuando los 5 números aleatorios llegan por la ruta -->
+  @if (numerosTablas.length > 0) {
+    <div class="tablas-resultados">
+      
+      <!-- Recorremos cada uno de los 5 números aleatorios -->
+      @for (numTabla of numerosTablas; track $index) {
+        <div class="tabla-box" style="margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+          <h3>Tabla del {{ numTabla }}</h3>
+          <ul>
+            <!-- Recorremos del 1 al 10 para hacer las multiplicaciones -->
+            @for (mult of multiplicadores; track $index) {
+              <li>
+                {{ numTabla }} x {{ mult }} = {{ numTabla * mult }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+      
+    </div>
+  } @else {
+    <p>Selecciona una opción en el menú superior para ver las tablas generadas por parámetros.</p>
+  }
+</div>
